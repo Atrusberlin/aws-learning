@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: de.dranke.training.aws.StreamLambdaHandlerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.69 sec <<< FAILURE! - in de.dranke.training.aws.StreamLambdaHandlerTest
+ping_streamRequest_respondsWithHello(de.dranke.training.aws.StreamLambdaHandlerTest)  Time elapsed: 0.475 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<200> but was:<502>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at de.dranke.training.aws.StreamLambdaHandlerTest.ping_streamRequest_respondsWithHello(StreamLambdaHandlerTest.java:47)
+
+invalidResource_streamRequest_responds404(de.dranke.training.aws.StreamLambdaHandlerTest)  Time elapsed: 0.096 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<404> but was:<502>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:633)
+	at de.dranke.training.aws.StreamLambdaHandlerTest.invalidResource_streamRequest_responds404(StreamLambdaHandlerTest.java:69)
+
