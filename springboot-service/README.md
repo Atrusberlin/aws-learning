@@ -11,7 +11,7 @@ Using [Maven](https://maven.apache.org/), you can create an AWS Lambda-compatibl
 ```bash
 $ mvn archetype:generate -DartifactId=my-spring-api -DarchetypeGroupId=com.amazonaws.serverless.archetypes -DarchetypeArtifactId=aws-serverless-spring-archetype -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.sapessi.spring -Dversion=0.1 -Dinteractive=false
 $ cd my-spring-api
-$ mvn clean package
+$ mvn clean package -DskipTests
 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -21,6 +21,9 @@ $ mvn clean package
 [INFO] Final Memory: XXM/XXXM
 [INFO] ------------------------------------------------------------------------
 ```
+
+Tests has to be disabled, becaus on local it's not possible to start application. That works with sam only.\
+!!Todo: find out how to configure it with maven.
 
 You can use [AWS SAM Local](https://github.com/awslabs/aws-sam-local) to start your project.
 

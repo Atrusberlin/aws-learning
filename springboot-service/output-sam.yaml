@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: de.dranke.training.aws.StreamLambdaHandler::handleRequest
       Runtime: java8
-      CodeUri: target/aws-springboot-service-1.0-SNAPSHOT.jar
+      CodeUri: s3://dranke-learning-aws/2c08edd0174a654a3c34e6d7cc0afc2c
       MemorySize: 512
       Policies: AWSLambdaBasicExecutionRole
       Timeout: 30
@@ -17,10 +17,10 @@ Resources:
           Properties:
             Path: /{proxy+}
             Method: any
-
 Outputs:
   SpringbootSampleApi:
     Description: URL for application
-    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ping'
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/ping
     Export:
       Name: SpringbootSampleApi
